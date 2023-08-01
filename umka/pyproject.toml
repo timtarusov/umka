@@ -18,6 +18,6 @@ build-backend = "maturin"
 features = ["pyo3/extension-module"]
 all_features = "true"
 module-name = "umka.fuzz.umka_rs"
-compatibility = "manylinux2014"
+compatibility = "manylinux_2_28"
 
 
