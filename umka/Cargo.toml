@@ -1,0 +1,31 @@
+[package]
+name = "umka-rs"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "umka"
+crate-type = ["cdylib"]
+
+[dependencies]
+fuzzywuzzy = "0.0.2"
+polars = "0.31.1"
+polars-core = "0.31.1"
+polars-lazy = "0.31.1"
+pyo3 = "0.19.1"
+pyo3-polars = "0.5.0"
+rayon = "1.7.0"
+
+
+# [target.x86_64-apple-darwin]
+# rustflags = [
+#   "-C", "link-arg=-undefined",
+#   "-C", "link-arg=dynamic_lookup",
+# ]
+#
+# [target.aarch64-apple-darwin]
+# rustflags = [
+#   "-C", "link-arg=-undefined",
+#   "-C", "link-arg=dynamic_lookup",
+# ]

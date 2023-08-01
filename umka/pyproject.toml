@@ -1,0 +1,22 @@
+[project]
+name = "umka"
+version = "0.1.0"
+dependencies = [
+    "polars==0.17.1",
+    "pyarrow",
+]
+description = "Umka is a Python library for extending Polars"
+requires-python = ">=3.8"
+
+classifiers = ["Programming Language :: Python"]
+
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
+module-name = "umka.fuzz.umka_rs"
+compatibility = "manylinux2014"
+
+

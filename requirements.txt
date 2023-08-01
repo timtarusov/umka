@@ -1,0 +1,3 @@
+maturin
+polars[pyarrow]==0.17.1
+
