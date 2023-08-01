@@ -46,7 +46,7 @@ jobs:
           target: ${{ matrix.target }}
           args: --release --out dist --find-interpreter --manifest-path umka/Cargo.toml
           sccache: 'true'
-          manylinux: 2014
+          manylinux: 2_17
           maturin-version: ${{ env.MATURIN_VERSION }}
           rust-toolchain: nightly
       - name: Upload wheels
