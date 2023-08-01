@@ -16,6 +16,12 @@ on:
   pull_request:
   workflow_dispatch:
 
+env:
+  RUST_TOOLCHAIN: nightly-2023-07-27
+  PYTHON_VERSION: '3.8'
+  MATURIN_VERSION: '1.1.0'
+  MATURIN_PYPI_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
+
 permissions:
   contents: read
 
@@ -36,11 +42,14 @@ jobs:
           override: true
       - name: Build wheels
         uses: PyO3/maturin-action@v1
+        env:
+          RUSTFLAGS: -C target-feature=+fxsr,+sse,+sse2,+sse3,+ssse3,+sse4.1,+sse4.2,+popcnt,+avx,+fma
         with:
           target: ${{ matrix.target }}
           args: --release --out dist --find-interpreter --manifest-path umka/Cargo.toml
           sccache: 'true'
           manylinux: auto
+          maturin-version: ${{ env.MATURIN_VERSION }}
           rust-toolchain: nightly
       - name: Upload wheels
         uses: actions/upload-artifact@v3
