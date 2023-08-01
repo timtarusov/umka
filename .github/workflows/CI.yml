@@ -10,6 +10,7 @@ on:
     branches:
       - main
       - master
+      - dev
     tags:
       - '*'
   pull_request:
@@ -36,6 +37,7 @@ jobs:
           args: --release --out dist --find-interpreter --manifest-path umka/Cargo.toml
           sccache: 'true'
           manylinux: auto
+          rust-toolchain: nightly
       - name: Upload wheels
         uses: actions/upload-artifact@v3
         with:
