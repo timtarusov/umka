@@ -9,7 +9,7 @@ name = "umka"
 crate-type = ["cdylib"]
 
 [dependencies]
-fuzzywuzzy = "0.0.2"
+fuzzywuzzy = { git = "https://github.com/logannc/fuzzywuzzy-rs", branch = "master" }
 polars = "0.31.1"
 polars-core = "0.31.1"
 polars-lazy = "0.31.1"
